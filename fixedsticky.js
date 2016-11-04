@@ -62,6 +62,8 @@
 				toggle = function( turnOn ) {
 					$el[ turnOn ? 'addClass' : 'removeClass' ]( S.classes.active )
 						[ !turnOn ? 'addClass' : 'removeClass' ]( S.classes.inactive );
+
+					$(win).triggerHandler(jQuery.Event('fixesticky.update'));
 				},
 				viewportHeight = $( window ).height(),
 				position = $el.data( S.keys.position ),
